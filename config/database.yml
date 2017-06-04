@@ -13,12 +13,12 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: root
-  password:
   host: localhost
 
 development:
   <<: *default
+  username: root
+  password:
   database: property_development
 
 # Warning: The database defined as "test" will be erased and
@@ -26,6 +26,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+  username: root
+  password:
   database: property_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
@@ -49,6 +51,6 @@ test:
 #
 production:
   <<: *default
+  username: root
+  password: root
   database: property_production
-  username: property
-  password: <%= ENV['PROPERTY_DATABASE_PASSWORD'] %>
